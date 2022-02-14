@@ -11,4 +11,11 @@ exports.Query = {
     const { id } = args;
     return db.categories.find((cat) => cat.id === id);
   },
+  reviews: (parent, args, { db }) => {
+    return db.reviews;
+  },
+  review: (parent, args, { db }) => {
+    const { id } = args;
+    return db.reviews.find((rev) => rev.id === id);
+  },
 };
